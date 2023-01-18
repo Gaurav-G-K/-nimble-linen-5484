@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&family=Montserrat&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+#navbar{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    z-index: 999;
+}
+a{
+    text-decoration: none;
+    letter-spacing: 0.8px;
+    color: rgba(0, 0, 0, 0.9);
+}
+#headNav{
+    height: 19px;
+    display: flex;
+    background-color: #EEE;
+    justify-content: space-between;
+    padding: 8px 30px;
+    font-size: 10px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+#headNav a{
+    margin: 0 10px;
+    
+}
+#headNav img{
+    width: 11px;
+}
+#logo {
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 30px;
+    display: flex;
+}
+#logoMall {
+    color: #2568fb;
+}
+#nav{
+    
+    width: 100%;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.541);
+    height: 50px;
+}
+#mainNav{
+    display: flex;
+    max-width: 1170px;
+    margin: auto;
+    align-items: center;
+}
+#mainNav>div{
+    display: flex;
+    padding: 0 10px;
+    height: 100%;
+}
+#mainNav>div:nth-child(1){
+    width: 14%;
+}
+#mainNav>div:nth-child(2){
+    font-family: montserrat, sans-serif;
+    font-size: 14px;
+    width: 43%;
+}
+#mainNav>div:nth-child(2)>a{
+    margin: 0 10px;
+    
+}
+#mainNav>div:nth-child(2)>a:hover{
+    border-bottom: 3px solid rgba(212, 216, 2, 0.87);
+    line-height: 10px;
+    
+}
+#mainNav>div:nth-child(3){
+    display: flex;
+    align-items: center;
+    width: 43%;
+    height: 50px;
+    
+}
+#mainNav>div:nth-child(3)>div{
+    margin:0 6px;
+}
+#mainNav>div:nth-child(3)>div>img{
+    width: 20px;
+    padding: 10px 0px 10px 8px;
+}
+#mainNav>div:nth-child(3)>div:nth-child(1){
+    width: 60%;
+    display: flex;
+    border-radius: 5px;
+    background-color: rgba(245, 245, 245, 0.822);
+    align-items: center;
+}
+#mainNav>div:nth-child(3)>div:nth-child(2){
+    font: size 25px;
+}
+#mainNav>div:nth-child(3)>div:nth-child(3){
+    font-size: 16px;
+}
+#mainNav>div:nth-child(3)>div:nth-child(4) img{
+    transform: translateY(2px);
+}
+#mainNav>div:nth-child(3)>div:nth-child(5) img{
+    transform: translateY(2px);
+}
+
+#mainNav>div:nth-child(3)>div:nth-child(6)>img{
+    width: 30px;
+    transform: translateY(2px);
+    padding: 0;
+
+}
+#mainNav>div:nth-child(3)>div input{
+    border: none;
+    background-color: transparent;
+    font-size: 12px;
+    padding: 0px 10px;
+    width: 80%;
+    color: rgba(245, 245, 245, 0.822);
+    font-weight: 400;
+}
+#mainNav>div:nth-child(3)>div input:focus{
+    outline: none;
+}
+#tab{
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top: 86px;
+    
+}
+#tab>div{
+    padding: 21px 24px;
+    font-size: 17px;
+}
+#containar{
+    width: 100%;
+    margin-top: 163px;
+}
+#slider {
+    position: relative;
+    width: calc(100%-10px);
+    overflow:hidden ;
+}
+.slider-images{
+    margin: 0 10px 10px 10px;
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+#slider>div>img{
+    margin-right: 10px;
+    width: 34%;
+}
+.btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 20px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+  
+.btn.prev {
+    left: 10px;
+}
+  
+.btn.next {
+    right: 10px;
+}
+  
+.btn:hover {
+    opacity: 1;
+}
+
+
+
+
+
+
+
+.full-width-image{
+    width: 100%;
+    margin: 10px 0;
+}
+.full-width-image img{
+    width: 100%;
+
+}
