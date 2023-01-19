@@ -55,6 +55,7 @@ a{
     max-width: 1170px;
     margin: auto;
     align-items: center;
+    position: relative;
 }
 #mainNav>div{
     display: flex;
@@ -65,18 +66,80 @@ a{
     width: 14%;
 }
 #mainNav>div:nth-child(2){
-    font-family: montserrat, sans-serif;
     font-size: 14px;
     width: 43%;
-}
-#mainNav>div:nth-child(2)>a{
-    margin: 0 10px;
     
 }
-#mainNav>div:nth-child(2)>a:hover{
-    border-bottom: 3px solid rgba(212, 216, 2, 0.87);
-    line-height: 10px;
+#mainNav>div:nth-child(2)>ul{
+    display: flex;
+    height: 100%;
+}
+#mainNav>div:nth-child(2)>ul>li{
+    list-style: none;
     
+}
+#mainNav>div:nth-child(2)>ul>li>a{
+    padding: 12px 20px;
+}
+#mainNav>div:nth-child(2)>ul>li>a:hover{
+    border-bottom: 5px solid rgba(212, 216, 2, 0.87);
+}
+#mainNav>div:nth-child(2)>ul>li div{
+display: none;
+top: 51px;
+left: 0;
+width: 1200px;
+position: absolute;
+background-color: rgb(255, 255, 255);
+}
+#mainNav>div:nth-child(2)>ul li div>ul{
+    margin: 20px;
+}
+
+#mainNav>div:nth-child(2)>ul>li:hover div{
+display: flex;
+}
+
+#mainNav>div:nth-child(2)>ul>li div>ul li{
+    font-size: 12px;
+    list-style: none;
+    padding: 2px 10px;
+}
+#mainNav>div:nth-child(2)>ul>li div li a:hover{
+text-decoration: underline;
+}
+#mainNav>div:nth-child(2)>ul>li div li.listHeader{
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+#mainNav>div:nth-child(2)>ul>li div li.popular{
+    height: 40px;
+}
+#mainNav>div:nth-child(2)>ul>li div .ulBorder{
+    border-right: 1px solid gray;
+}
+#mainNav>div:nth-child(2)>ul>li div ul ul{
+    margin-bottom: 50px;
+}
+ul.special li a{
+    color: rgba(109, 107, 107, 0.932);
+}
+ul.special li:nth-child(1){
+    color: rgba(143, 143, 143, 0.644);
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+ul.special li{
+    margin-bottom: 10px;
+}
+ul.special li img{
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+ul.special li{
+    display: flex;
+    align-items: center;
 }
 #mainNav>div:nth-child(3){
     display: flex;
@@ -116,7 +179,6 @@ a{
     width: 30px;
     transform: translateY(2px);
     padding: 0;
-
 }
 #mainNav>div:nth-child(3)>div input{
     border: none;
@@ -124,7 +186,7 @@ a{
     font-size: 12px;
     padding: 0px 10px;
     width: 80%;
-    color: rgba(245, 245, 245, 0.822);
+    color: black;
     font-weight: 400;
 }
 #mainNav>div:nth-child(3)>div input:focus{
@@ -137,7 +199,7 @@ a{
     justify-content: center;
     position: fixed;
     width: 100%;
-    z-index: 999;
+    z-index: 10;
     top: 86px;
     
 }
@@ -148,6 +210,7 @@ a{
 #containar{
     width: 100%;
     margin-top: 163px;
+    margin-bottom: 0;
 }
 #slider {
     position: relative;
@@ -184,18 +247,99 @@ a{
 .btn:hover {
     opacity: 1;
 }
-
-
-
-
-
-
-
 .full-width-image{
     width: 100%;
     margin: 10px 0;
 }
 .full-width-image img{
     width: 100%;
+}
+.catalog{
+    display: flex;
+    max-width: 1170px;
+    margin: 10px auto;
+    text-align: center;
+    overflow: hidden;
+}
+.catalog div{
+    margin: 0 10px;
+}
+.catalog div img{
+    width: 125px;
+    height: 173px;
+}
+.catalog div a{
+    color: black;
+    font-size: 10px;
+    font-weight: bolder;
+}
+.designOfWeek{
+    margin: 40px 0 10px 0;
+    width: 100%;
+    text-align: center;
+}
+.designOfWeek div{
 
+    display: flex;
+}
+.designOfWeek div img{
+    width: 50%;
+}
+.tranding {
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+}
+.tranding h1{
+    font-size: 20px;
+}
+.tranding div{
+    display: flex;
+}
+.tranding div>div img{
+    width: 100%;
+}
+.bestPics{
+    width: 100%;
+    margin: -10px 0 10px 0;
+    text-align: center;
+    font-size: 20px;
+}
+.bestPics h1{
+    font-size: 20px;
+}
+.bestPics>div{
+    display: flex;
+    
+}
+.bestPics>div div{
+    margin:5px;
+}
+.bestPics>div div img{
+    width: 100%;
+}
+.categories{
+    text-align: center;
+    width: 100%;
+}
+.categories h1{
+    font-size: 20px;
+}
+.categories div{
+    display: flex;
+
+}
+.categories div img{
+    width: 100%;
+}
+.footer{
+    padding: 10px;
+    background-color: black;
+    color: white;
+    margin: 0;
+}
+.footer>div{
+    max-width: 1100px;
+    margin: auto;
+    border: 1px solid red;
 }
