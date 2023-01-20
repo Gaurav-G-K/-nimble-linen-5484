@@ -210,204 +210,28 @@ ul.special li{
 #mainNav>div:nth-child(3)>div input:focus{
     outline: none;
 }
-#tab{
-    background-color: rgb(255, 255, 255);
+.content{
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-    z-index: 10;
-    top: 78px;
-    
-}
-#tab>div{
-    padding: 21px 24px;
-    font-size: 17px;
-}
-#containar{
-    width: 100%;
-    margin-top: 155px;
-    margin-bottom: 0;
-}
-#slider {
-    position: relative;
-    width: calc(100%-10px);
-    overflow:hidden ;
-}
-.slider-images{
-    margin: 0 10px 10px 10px;
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-#slider>div>img{
-    margin-right: 10px;
-    width: 34%;
-}
-.btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: white;
-    font-size: 20px;
-    opacity: 0.5;
-    cursor: pointer;
-}
-.btn.prev {
-    left: 10px;
-} 
-.btn.next {
-    right: 10px;
-} 
-.btn:hover {
-    opacity: 1;
-}
-.full-width-image{
-    width: 100%;
-    margin: 10px 0;
-}
-.full-width-image img{
-    width: 100%;
-}
-.catalog{
-    display: flex;
-    max-width: 1170px;
-    margin: 10px auto;
-    text-align: center;
-    overflow: hidden;
-}
-.catalog div{
-    margin: 0 10px;
-}
-.catalog div img{
-    width: 125px;
-    height: 173px;
-}
-.catalog div a{
-    color: black;
-    font-size: 10px;
-    font-weight: bolder;
-}
-.designOfWeek{
-    margin: 40px 0 10px 0;
-    width: 100%;
+    margin: 78px 0 0 0;
+    box-sizing: border-box;
+    height: calc(100%-86px);
     text-align: center;
 }
-.designOfWeek div{
-
-    display: flex;
-}
-.designOfWeek div img{
+.content div{
     width: 50%;
+    padding: 0 10px;
 }
-.tranding {
-    margin: 20px 0;
-    width: 100%;
-    text-align: center;
+.content div img{
+    width:100%;
+    padding: 30px 0;
+    margin: 9px;
 }
-.tranding h1{
-    font-size: 20px;
-}
-.tranding>div{
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-}
-.tranding div>div img{
-    width: 100%;
-}
-.bestPics{
-    width: 100%;
-    text-align: center;
-    font-size: 20px;
-}
-.bestPics h1{
-    font-size: 20px;
-}
-.bestPics>div{
-    margin: 5px;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 10px;
-}
-.bestPics>div div img{
-    width: 100%;
-}
-.categories{
-    text-align: center;
-    width: 100%;
-}
-.categories h1{
-    font-size: 20px;
-}
-.categories>div{
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-}
-.categories div img{
-    width: 100%;
-}
-.footer{
-    background-color: rgba(0, 0, 0, 0.863);
-    color: white;
-    margin: 0;
-    padding-top: 70px;
-    padding-bottom: 100px;
-}
-.footer a{
-    color: white;
-}
-.footer p{
-    font-size: 15px;
-}
-.footer>div{
-    max-width: 85%;
-    margin: 0 auto;
-}
-.footer h1{
-    font-size: 30px;
-    
-}
-.footer .heading{
-    color: yellow;
-    margin-bottom: 10px;
-}
-.footer>div .contact{
-    display: grid;
-    grid-template-columns: repeat(3,0.9fr) 1.3fr;
-    gap: 20px;
-}
-.footer>div .contact .subs input[type="button"]{
-    width: 40%;
-    background-color: yellow;
-    border: 2px solid yellow;
-    font-size: 18px;
-    padding: 5px 10px;
-}
-.footer>div .contact .subs input[type="email"]{
-    background-color:transparent;
-    border :none;
-    padding: 5px 0;
-    width: 50%;
-    border-bottom: 2px solid yellow;
-    font-size: 18px;
-    color: gray;
-}
-.footer>div .contact .subs input[type="email"]:focus{
-    outline: none;
-}
-.footer>div .contact .app{
+.content div:nth-child(1){
+    background-image: linear-gradient(0deg,#fff4c4,#fff);
     display: flex;
-}
-.footer>div .contact .app img{
-    width: 90%;
-}
-.discription h3{
-    margin: 10px 0;
-}
-.discription p{
-    font-size: 18px;
-    margin: 20px 0;
-}
-.discription a{
-    color: rgb(81, 195, 233);
+    flex-direction: column;
+    
 }
