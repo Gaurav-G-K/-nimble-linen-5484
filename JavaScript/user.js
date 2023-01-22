@@ -1,7 +1,13 @@
 let checkLogin=localStorage.getItem("login")
 
-if(checkLogin!=null);
+if(checkLogin!=null)
 {
+    document.querySelector("#cart").addEventListener("click",()=>{
+        location="./cart.html"
+    })
+    document.querySelector("#favorite").addEventListener("click",()=>{
+        location="./favotite.html"
+    })
     let data=JSON.parse(localStorage.getItem("loginData"))
     let login=document.querySelector("#login")
     for(let i=0;i<data.length;i++){
@@ -31,6 +37,17 @@ if(checkLogin!=null);
         }
     }
 }
-document.querySelector(".load").addEventListener("click",()=>{
-    location="./LogInAndUp.html"
-})
+else{
+    document.querySelector(".load").addEventListener("click",()=>{
+        location="./LogInAndUp.html"
+    })
+    document.querySelector("#cart").addEventListener("click",()=>{
+        alert("Login First")
+        location="./LogInAndUp.html"
+    })
+    document.querySelector("#favorite").addEventListener("click",()=>{
+        alert("Login First")
+        location="./LogInAndUp.html"
+    })
+
+}

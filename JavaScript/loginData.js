@@ -44,11 +44,14 @@ button.addEventListener("click",()=>{
                 first_name:Fname.value,
                 last_name:Lname.value,
                 password:pass.value,
+                cart:[],
+                favorite:[]
             }
             if(arr==null)
             arr=[];
             arr.push(obj);
             localStorage.setItem("loginData",JSON.stringify(arr));
+            localStorage.setItem("login",email.value)
             location="./index.html"
         }
     }

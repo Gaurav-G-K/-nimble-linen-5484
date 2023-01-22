@@ -213,6 +213,9 @@ ul.special li{
     position: relative;
     cursor: pointer;
 }
+#favorite,#cart{
+    cursor: pointer;
+}
 #login ul li{
     top:40px;
     left: 20px;
