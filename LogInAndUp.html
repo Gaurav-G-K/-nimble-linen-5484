@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sasta Mall</title>
     <link rel="stylesheet" href="./css/LogInAndUp.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
@@ -163,7 +164,7 @@
                                 <ul class="special">
                                     <li>SPECIALS</li>
                                     <li>
-                                        <img src="https://www.bewakoof.com/campaign/mad-in-india-sale-for-men" alt="">
+                                        <img src="./images/special/mad-india-circle-icon-1673616489.webp" alt="">
                                         <a href="#">Man in India Sale</a>
                                     </li>
                                     <li>
@@ -379,7 +380,7 @@
                                 <ul class="special">
                                     <li>SPECIALS</li>
                                     <li>
-                                        <img src="./images/spaicial/mad-india-circle-icon-1673616489.webp" alt="">
+                                        <img src="./images/special/mad-india-circle-icon-1673616489.webp" alt="">
                                         <a href="#">Man in India Sale</a>
                                     </li>
                                     <li>
@@ -570,23 +571,34 @@
         </div>
     </div>
     </div>
-    <div class="content">
+    <div class="content" id="containar">
         <div>
             <h1>Welcome to the world of Bewakoof!</h1>
             <img src="./images/signin&out/group-19-1617704502.webp" alt="">
         </div>
-
-
-
         <div>
-            <h1>Log in / Sign up</h1>
+            <div>
+                <h1>Log in / Sign up</h1>
             <h3>for Latest trends, exciting offers and everything Bewakoof!</h3>
+            </div>
 
+            <div class="loginData">
+                <input type="email" name="email" id="email" placeholder="Enter your Email">
+                <input type="text" name="name" id="firstname" placeholder="Enter Firstname">
+                <input type="text" name="name" id="lastname" placeholder="Enter lastname">
+                <input type="password" name="password" id="password" placeholder="Enter Password">
+                <input type="password" name="password" id="Againpassword" placeholder="Enter Password">
+                <button id="continue">CONTINUE</button>
+                <h2>Forget Password</h2>
+            </div>
+            <div>
+            </div>
+            <p>By creating an account or logging in, you agree with Bewakoof's Terms and Conditions and Privacy Policy.</p>
         </div>
     </div>
 
 
 
 </body>
-
+<script src="./JavaScript/loginData.js"></script>
 </html>

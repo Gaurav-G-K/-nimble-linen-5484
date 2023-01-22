@@ -44,7 +44,6 @@ a{
     color: #2568fb;
 }
 #nav{
-    
     width: 100%;
     border-bottom: 1px solid rgba(128, 128, 128, 0.541);
     height: 50px;
@@ -210,6 +209,19 @@ ul.special li{
 #mainNav>div:nth-child(3)>div input:focus{
     outline: none;
 }
+#login{
+    position: relative;
+    cursor: pointer;
+}
+#login ul li{
+    top:40px;
+    left: 20px;
+position: absolute;
+
+    list-style: none;
+    color: blue;
+    display: none;
+}
 #tab{
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -227,7 +239,7 @@ ul.special li{
 }
 #containar{
     width: 100%;
-    margin-top: 155px;
+    margin-top: 140px;
     margin-bottom: 0;
 }
 #slider {
@@ -346,44 +358,44 @@ ul.special li{
 .categories div img{
     width: 100%;
 }
-.footer{
+#footer{
     background-color: rgba(0, 0, 0, 0.863);
     color: white;
     margin: 0;
     padding-top: 70px;
     padding-bottom: 100px;
 }
-.footer a{
+#footer a{
     color: white;
 }
-.footer p{
+#footer p{
     font-size: 15px;
 }
-.footer>div{
+#footer>div{
     max-width: 85%;
     margin: 0 auto;
 }
-.footer h1{
+#footer h1{
     font-size: 30px;
     
 }
-.footer .heading{
+#footer .heading{
     color: yellow;
     margin-bottom: 10px;
 }
-.footer>div .contact{
+#footer>div .contact{
     display: grid;
     grid-template-columns: repeat(3,0.9fr) 1.3fr;
     gap: 20px;
 }
-.footer>div .contact .subs input[type="button"]{
+#footer>div .contact .subs input[type="button"]{
     width: 40%;
     background-color: yellow;
     border: 2px solid yellow;
     font-size: 18px;
     padding: 5px 10px;
 }
-.footer>div .contact .subs input[type="email"]{
+#footer>div .contact .subs input[type="email"]{
     background-color:transparent;
     border :none;
     padding: 5px 0;
@@ -392,13 +404,13 @@ ul.special li{
     font-size: 18px;
     color: gray;
 }
-.footer>div .contact .subs input[type="email"]:focus{
+#footer>div .contact .subs input[type="email"]:focus{
     outline: none;
 }
-.footer>div .contact .app{
+#footer>div .contact .app{
     display: flex;
 }
-.footer>div .contact .app img{
+#footer>div .contact .app img{
     width: 90%;
 }
 .discription h3{
