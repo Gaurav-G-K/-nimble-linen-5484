@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sasta Mall</title>
-    <link rel="stylesheet" href="./css/LogInAndUp.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/cloth.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
@@ -563,42 +563,190 @@
                         placeholder="Search by product, category or collection">
                 </div>
                 <div>|</div>
-                <div><a href="#">Login</a></div>
-                <div><a href="#"><img src="./icons/heart.svg" alt=""></a></div>
-                <div><a href="#"><img src="./icons/shopping-bag.svg" alt=""></a></div>
+                <div id="login" class="load">Login</div>
+                <div id="favorite"><img src="./icons/heart.svg" alt=""></div>
+                <div id="cart"><img src="./icons/shopping-bag.svg" alt=""></div>
                 <div><img src="./icons/india-flag.png" alt=""></div>
             </div>
         </div>
     </div>
     </div>
-    <div class="content" id="containar">
+    <div id="outer-containar">
         <div>
-            <h1>Welcome to the world of Bewakoof!</h1>
-            <img src="./images/signin&out/group-19-1617704502.webp" alt="">
+            <a href="./index.html">Home</a>/ <a href="./women.html">Men Clothing</a>
         </div>
-        <div>
-            <div>
-                <h1>Log in / Sign up</h1>
-            <h3>for Latest trends, exciting offers and everything Bewakoof!</h3>
+        <h2>Women Clothing (<span id="count"></span>) </h2>
+        <div class="mainContainer">
+            <div class="filter">
+                <span>Filter</span>
+                <div>
+                    <ul onclick=open(1)><p>Category </p>
+                        <div class="listcontainar">
+                        <li>T-Shirt</li>
+                        <li>Shirt</li>
+                        <li>Jeans</li>
+                        <li>jacket</li>
+                        <li>hoodies</li> 
+                        <li>Kurta</li>
+                        </div>
+                    </ul>
+                    <ul onclick=open(2)><p>Sizes</p>
+                        <div class="listcontainar">
+                        <li>XS</li>
+                        <li>S</li>
+                        <li>M</li>
+                        <li>L</li>
+                        <li>XL</li>
+                        <li>2XL</li>
+                        <li>3XL</li>
+                        </div>
+                    </ul>
+                    <ul onclick=open(3)><p>Brands</p>
+                        <div class="listcontainar">
+                        <li>Bewakoof</li>
+                        <li>Xyxx</li>
+                        <li>Snitch</li>
+                        <li>Campus Sutra</li>
+                        <li>Adro</li>
+                        </div>
+                    </ul>
+                    <ul onclick=open(4)><p>Color</p>
+                        <div class="listcontainar">
+                        <li>Black</li>
+                        <li>White</li>
+                        <li>Yellow</li>
+                        <li>Blue</li>
+                        <li>Red</li>
+                        <li>Grey</li>
+                        </div>
+                    </ul>
+                    <ul onclick=open(5)><p>Design</p>
+                        <div class="listcontainar">
+                        <li>Solid</li>
+                        <li>Graphic Print</li>
+                        <li>Printed</li>
+                        <li>checked</li>
+                        </div>
+                    </ul>
+                </div>
             </div>
-
-            <div class="loginData">
-                <input type="email" name="email" id="email" placeholder="Enter your Email">
-                <input type="text" name="name" id="firstname" placeholder="Enter Firstname">
-                <input type="text" name="name" id="lastname" placeholder="Enter lastname">
-                <input type="password" name="password" id="password" placeholder="Enter Password">
-                <input type="password" name="password" id="Againpassword" placeholder="Enter Password">
-                <button id="continue">CONTINUE</button>
-                <h2>Forget Password</h2>
-            </div>
-            <div>
-            </div>
-            <p>By creating an account or logging in, you agree with Bewakoof's Terms and Conditions and Privacy Policy.</p>
+            <div id="cloth-containar"></div>                                                                                                                    
         </div>
     </div>
-
-
-
 </body>
-<script src="./JavaScript/loginData.js"></script>
+ <script src="./JavaScript/user.js"></script>
+ <script src="./JavaScript/addCart.js"></script>
+ <script>
+    let container=document.querySelector("#cloth-containar")
+    const url="./productData.json"
+    let data;
+    async function fetchData(url){
+        try{
+            let res=await fetch(url);
+            res=await res.json();
+            let arr=[]
+            res.forEach(el => {
+                if(el.type=="women")
+                arr.push(el)
+            });
+            console.log(arr)
+            data=res;
+            displayData(arr)
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+    fetchData(url)
+
+    function displayData(arr){
+        container.innerHTML="";
+        document.querySelector("#count").innerText=arr.length;
+        arr.forEach(el => {
+            
+            let cart=document.createElement("div")
+            let image=document.createElement("img")
+            let div=document.createElement("div")
+            let innerlefttdiv=document.createElement("div")
+            let innerrightdiv=document.createElement(("div"))
+            let brand=document.createElement("h3")
+            let title=document.createElement("p")
+            let icon=document.createElement("img")
+            let price=document.createElement("h2")
+            let addToCart=document.createElement("button")
+            image.src=el.src;
+            brand.innerText="Bewakoof";
+            title.innerText=el.title
+            innerlefttdiv.append(brand,title)
+            icon.src="./icons/heart.svg"
+            innerrightdiv.append(icon)
+            div.append(innerlefttdiv,innerrightdiv)
+            price.innerText=`₹${el.price}`
+            addToCart.innerText="Buy now"
+            icon.style.cursor="pointer"
+            icon.addEventListener("click",()=>{
+                let login=localStorage.getItem("login")
+                let data=[];
+                if(login==null)
+                location="./LogInAndUp.html"
+                else{
+                    let arr=JSON.parse(localStorage.getItem("loginData"))
+                    for(let i=0;i<arr.length;i++)
+                    {
+                        if(arr[i].email==login)
+                        {
+                            if(!check(arr[i].favorite,el)){
+                            arr[i].favorite.push(el)
+                            alert("Added successfully")
+                            }
+                        else
+                        alert("already Added")
+                        break;
+                    }
+                    }
+                    localStorage.setItem("loginData",JSON.stringify(arr));
+                    }
+                    
+                });
+
+                addToCart.addEventListener("click",()=>{
+                let login=localStorage.getItem("login")
+                let data=[];
+                if(login==null)
+                location="./LogInAndUp.html"
+                else{
+                    let arr=JSON.parse(localStorage.getItem("loginData"))
+                    for(let i=0;i<arr.length;i++)
+                    {
+                        if(arr[i].email==login)
+                        {
+                            if(!check(arr[i].cart,el)){
+                            arr[i].cart.push(el)
+                            alert("item Added in Cart")
+                            }
+                        else
+                        alert("Item already in Cart")
+                        break;
+                    }
+                    }
+                    localStorage.setItem("loginData",JSON.stringify(arr));
+                    }
+                    
+                });
+                cart.append(image,div,price,addToCart);
+                container.appendChild(cart);
+            })
+        //
+    }
+function check(array,el){
+    for(let i=0;i<array.length;i++)
+    {
+        if(array[i].id==el.id)
+        {
+            return true;
+        }
+    }
+     return false
+}
+ </script>
 </html>

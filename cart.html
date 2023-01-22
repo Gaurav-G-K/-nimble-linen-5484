@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sasta Mall</title>
-    <link rel="stylesheet" href="./css/LogInAndUp.css">
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/cloth.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 
@@ -563,42 +563,77 @@
                         placeholder="Search by product, category or collection">
                 </div>
                 <div>|</div>
-                <div><a href="#">Login</a></div>
-                <div><a href="#"><img src="./icons/heart.svg" alt=""></a></div>
-                <div><a href="#"><img src="./icons/shopping-bag.svg" alt=""></a></div>
+                <div id="login" class="load">Login</div>
+                <div id="favorite"><img src="./icons/heart.svg" alt=""></div>
+                <div id="cart"><img src="./icons/shopping-bag.svg" alt=""></div>
                 <div><img src="./icons/india-flag.png" alt=""></div>
             </div>
         </div>
     </div>
     </div>
-    <div class="content" id="containar">
-        <div>
-            <h1>Welcome to the world of Bewakoof!</h1>
-            <img src="./images/signin&out/group-19-1617704502.webp" alt="">
-        </div>
-        <div>
-            <div>
-                <h1>Log in / Sign up</h1>
-            <h3>for Latest trends, exciting offers and everything Bewakoof!</h3>
-            </div>
+    
+    <div id="cloth-containar" style="width: 90%; grid-template-columns: repeat(4,1fr); margin:100px auto;">
 
-            <div class="loginData">
-                <input type="email" name="email" id="email" placeholder="Enter your Email">
-                <input type="text" name="name" id="firstname" placeholder="Enter Firstname">
-                <input type="text" name="name" id="lastname" placeholder="Enter lastname">
-                <input type="password" name="password" id="password" placeholder="Enter Password">
-                <input type="password" name="password" id="Againpassword" placeholder="Enter Password">
-                <button id="continue">CONTINUE</button>
-                <h2>Forget Password</h2>
-            </div>
-            <div>
-            </div>
-            <p>By creating an account or logging in, you agree with Bewakoof's Terms and Conditions and Privacy Policy.</p>
-        </div>
     </div>
+    </body>
+    <script src="./JavaScript/user.js"></script>
+    <script src="./JavaScript/cart.js"></script>
+    <script>
+        let containar=document.querySelector("#cloth-containar")
+        let login=localStorage.getItem("login")
+        let arr=JSON.parse(localStorage.getItem("loginData"))
+        let data=[];
+        for(let i=0;i<arr.length;i++)
+        {
+            if(arr[i].email==login)
+            {
+                data=arr[i].cart;
+                displayData(data)
+                break;
+            }
+        }
+         function displayData(data){
+        containar.innerHTML="";
+        for(let i=0;i<data.length;i++){
+            let cart=document.createElement("div")
+            let image=document.createElement("img")
+            let div=document.createElement("div")
+            let innerlefttdiv=document.createElement("div")
+            let innerrightdiv=document.createElement("div")
+            let brand=document.createElement("h3")
+            let title=document.createElement("p")
+            let icon=document.createElement("img")
+            icon.style.cursor="pointer"
+            icon.addEventListener("click",()=>{
+            data.splice(i,1)
+            for(let j=0;j<arr.length;j++)
+                    {
+                        if(arr[j].email==login)
+                        {
+                            arr[j].favorite=data;
+                            localStorage.setItem("loginData",JSON.stringify(arr))
+                            alert("Item Removed ")
+                            displayData(arr[j].favorite);
+                        }
+                    }
 
+                    
+                });
+            let price=document.createElement("h2")
+            let addToCart=document.createElement("button")
+            image.src=data[i].src
+            brand.innerText="Bewakoof";
+            title.innerText=data[i].title
+            innerlefttdiv.append(brand,title)
+            icon.src="./icons/heart.svg"
+            innerrightdiv.append(icon)
+            div.append(innerlefttdiv,innerrightdiv)
+            price.innerText=`₹${data[i].price}`
+            addToCart.innerText="Buy now"
+            cart.append(image,div,price,addToCart)
+            containar.appendChild(cart)
 
-
-</body>
-<script src="./JavaScript/loginData.js"></script>
-</html>
+        }
+    }
+    </script>
+    </html>

@@ -1,0 +1,66 @@
+#outer-containar{
+    max-width: 1100px;
+    margin: 100px auto 20px;
+}
+#outer-containar>div:nth-child(1){
+   margin-top: 10px;
+   margin-bottom: 30px;
+}
+.mainContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.mainContainer .filter{
+    width: 25%;
+    margin: 20px 0;
+}
+.filter>div{
+    margin-top: 20px;
+}
+.filter ul{
+    display: block;
+    border-bottom: 1px solid rgb(179, 178, 178);
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.filter ul .listcontainar{
+list-style: none;
+text-align: center;
+display: none;
+}
+.filter ul li {
+    cursor: pointer;
+}
+.filter ul:hover .listcontainar{
+    display: block;
+    }
+#cloth-containar{
+    width: 73%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+#cloth-containar div img{
+    width: 100%;
+}
+#cloth-containar>div>div{
+    width: 100%;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+}
+#cloth-containar div>div>div:nth-child(1){
+    width: 90%;
+}
+#cloth-containar div div>div:nth-child(2){
+    width: 9%;
+}
+#cloth-containar div div:nth-child(2) img{
+    width: 100%;
+}
+#cloth-containar div button{
+    display: block;
+    margin: auto;
+}
