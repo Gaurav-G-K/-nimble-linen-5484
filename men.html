@@ -558,9 +558,10 @@
             </div>
             <div>
                 <div class="searchBox">
-                    <img src="./icons/search.svg" alt="">
-                    <input type="search" name="search" id="searchInp"
-                        placeholder="Search by product, category or collection"">
+                    
+                    <input type="text" name="search" id="searchInp"
+                        placeholder="Search by product, category or collection">
+                        <img src="./icons/search.svg" alt="" id="search">
                 </div>
                 <div>|</div>
                 <div id="login" class="load">Login</div>
@@ -575,7 +576,7 @@
         <div>
             <a href="./index.html">Home</a>/ <a href="./women.html">Men Clothing</a>
         </div>
-        <h2>women Clothing (<span id="count"></span>) </h2>
+        <h2> <span id="cloth_type">Men</span> Clothing (<span id="count"></span>) </h2>
         <div class="mainContainer">
             <div class="filter">
                 <span>Filter</span>
@@ -748,22 +749,30 @@ function check(array,el){
      return false
 }
 
-
-// function search(){
-//     let inp=document.querySelector("#searchInp").value;
-//     let input=inp.trim().split(" ");
+document.querySelector("#search").addEventListener("click",()=>{
+    let inp=document.querySelector("#searchInp").value;
+    let input=inp.trim().split(" ");
+    let arr1=[];
+    let checkIn=[]
+    data.forEach(el => {
+    checkIn=el.check.trim().split(" ")
+    let checkitem=false;
+    for(let k=0;k<input.length;k++)
+    {
+        if(checkIn.includes(input[k]))
+        checkitem=true;
+        else
+        {
+            checkitem=false;
+            break;
+        }
+    }
+    if(checkitem==true)
+    arr1.push(el)
     
-//     let arr1=[];
-//     arr1=data.forEach(el => {
-//     let check=false;
-//     for(let k=0;k<input.length;k++)
-//     {
-//         console.log(inp)
-//     }
-//     if(check==true)
-//     console.log(el)
-// });
-// displayData(arr1)
-// }
+});
+document.querySelector("#cloth_type").innerText=""
+displayData(arr1)
+})
  </script>
 </html>
