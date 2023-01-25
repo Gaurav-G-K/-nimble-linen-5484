@@ -77,4 +77,12 @@ display: none;
     border-radius: 20px;
     padding: 5px 10px;
 }
+#checkout{
+cursor: pointer;
+background-color: white;
+font-size: 20px;
+box-sizing: border-box;
+border: none;
+color: red;
+}
 
