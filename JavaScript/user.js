@@ -28,7 +28,7 @@ if(checkLogin!=null)
                 logout.style.display="none"
                 logout.addEventListener("click",()=>{
                     localStorage.removeItem("login");
-                    location.reload(true)
+                    location="./index.html"
                 })
                 j++;
             })
