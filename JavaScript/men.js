@@ -103,9 +103,14 @@ function check(array, el) {
     }
     return false
 }
-
-document.querySelector("#search").addEventListener("click", () => {
-    let inp = document.querySelector("#searchInp").value;
+let searchData = document.querySelector("#searchInp");
+searchData.addEventListener("keyup",(e)=>{
+    if(e.key=="Enter")
+    seaching();
+})
+document.querySelector("#search").addEventListener("click", seaching)
+function seaching(){
+    let inp=searchData.value;
     inp=inp.toLowerCase()
     let input = inp.trim().split(" ");
     let arr1 = [];
@@ -127,4 +132,4 @@ document.querySelector("#search").addEventListener("click", () => {
     });
     document.querySelector("#cloth_type").innerText = ""
     displayData(arr1)
-})
+}
