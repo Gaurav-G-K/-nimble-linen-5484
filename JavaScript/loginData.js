@@ -1,8 +1,12 @@
 
 let email=document.querySelector("#email")
-let Fname=document.querySelector("#firstname");
-let Lname=document.querySelector("#lastname");
-let pass=document.querySelector("#password")
+let name=document.querySelector("#name");
+let image=document.querySelector("#image");
+let phone=document.querySelector("#phone");
+let pass=document.querySelector("#password");
+let Gender=document.querySelector("#Gender");
+let gender=document.getElementsByName("gender");
+let passAgain=document.querySelector("#Againpassword")
 let button=document.querySelector("button")
 let arr=JSON.parse(localStorage.getItem("loginData"));
 button.addEventListener("click",()=>{
@@ -35,14 +39,21 @@ button.addEventListener("click",()=>{
     }
     else if(button.innerText=="SIGN UP")
     {
-        if(email.value==""&&Fname.value==null&&Lname==null&&pass.value==null){
+        if(email.value==""&&name.value==null&&image==null&&pass.value==null&&phone.value==null&&passAgain==null){
             alert("Please Fill the form")
         }
         else{
+            let PGender;
+            if(gender[0].checked)
+            PGender=gender[0].value;
+            else
+            PGender=gender[1].value;
             let obj={
                 email:email.value,
-                first_name:Fname.value,
-                last_name:Lname.value,
+                name:name.value,
+                image:image.value,
+                phone:phone.value,
+                gender:PGender,
                 password:pass.value,
                 cart:[],
                 favorite:[]
@@ -52,7 +63,23 @@ button.addEventListener("click",()=>{
             arr.push(obj);
             localStorage.setItem("loginData",JSON.stringify(arr));
             localStorage.setItem("login",email.value)
-            location="./index.html"
+            async function fetchData(){
+                try {
+                    await fetch('https://63f63abd59c944921f6ff45a.mockapi.io/users',{
+                        method: "POST",
+                        headers: {
+                        'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(obj)
+                    });
+                    location="./index.html"
+                } catch (error) {
+                    console.log(error)
+                }
+            }
+            fetchData()
+            
+            
         }
     }
     else{
@@ -79,8 +106,11 @@ button.addEventListener("click",()=>{
     }
 })
 function signUP(){
-    Fname.style.display="block";
-        Lname.style.display="block";
-        pass.style.display="block"
+    name.style.display="block";
+        image.style.display="block";
+        phone.style.display="block";
+        Gender.style.display="flex";
+        pass.style.display="block";
+        passAgain.style.display="block";
         button.innerText="SIGN UP"
 }

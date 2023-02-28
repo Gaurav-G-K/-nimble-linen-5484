@@ -46,7 +46,10 @@
     margin: 20px 0;
     width: 80%;
 }
-.loginData input[type="text"] , .loginData input[type="password"]{
+.loginData input[type="text"] , .loginData input[type="password"],.loginData input[type="url"], .loginData input[type="number"]{
+    display: none;
+}
+.loginData p#Gender{
     display: none;
 }
 button{

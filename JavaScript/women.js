@@ -1,6 +1,6 @@
 
 let container = document.querySelector("#cloth-containar")
-const url = "./productData.json"
+const url = "https://63f63abd59c944921f6ff45a.mockapi.io/products"
 let data;
 async function fetchData(url) {
     try {

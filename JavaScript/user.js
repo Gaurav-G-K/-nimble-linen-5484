@@ -13,7 +13,7 @@ if(checkLogin!=null)
     for(let i=0;i<data.length;i++){
         if(data[i].email==checkLogin)
         {
-            login.innerHTML=`${data[i].first_name[0]}${data[i].last_name[0]}`
+            login.innerHTML=`<img src="${data[i].image}" style="width:40px; border-radius:50%;">`
             login.removeAttribute("class","load")
             let ul=document.createElement("ul")
             let logout=document.createElement("li")
